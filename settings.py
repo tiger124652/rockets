@@ -3,3 +3,7 @@ HEIGHT = 600
 
 PLAYER_HEALTH = 100
 PLAYER_SPEED = 5
+
+ROUNDS = 5
+ROCKETS = 10 # rockets per round
+SPEED_ROCKET = 6

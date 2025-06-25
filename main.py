@@ -2,6 +2,7 @@ import logging
 import pygame as py
 from settings import WIDTH, HEIGHT
 from player import Player
+from gameround import GameRound
 
 
 class Game:
@@ -20,11 +21,13 @@ class Game:
         self.logger = logging.getLogger(__name__)
 
         self.player = Player(self, WIDTH//2, HEIGHT//2)
+        self.game_round = GameRound(self)
 
-        self.logger.info("Игра инициализирована")
+        self.logger.info("Game initialized")
 
     def update(self):
         self.player.update()
+        self.game_round.update()
 
     def handle_events(self):
         for event in py.event.get():
@@ -36,6 +39,7 @@ class Game:
         self.screen.fill("black")
 
         self.player.show()
+        self.game_round.show_shells()
 
         py.display.flip()
 

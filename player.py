@@ -20,7 +20,7 @@ class Player:
         self.init_flags()
 
         self.logger = logging.getLogger(__name__)
-        self.logger.info("Player инициализирован")
+        self.logger.info("Player initialized")
 
     def init_flags(self):
         self.up = False
@@ -63,7 +63,7 @@ class Player:
 
         if self.health <= 0:
             self.app.is_running = False
-            self.logger.info("Player умер")
+            self.logger.info("The Player lost")
 
     def show(self):
         self.app.screen.blit(self.image, self.rect)
