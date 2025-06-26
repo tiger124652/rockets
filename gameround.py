@@ -2,8 +2,8 @@ import time
 import random
 import logging
 import pygame as py
-from shells.rocket import Rocket
-from shells.bomb.bomb import Bomb
+from projectile.rocket import Rocket
+from projectile.bomb.bomb import Bomb
 from settings import ROUNDS, ROCKETS, BOMBS
 
 
