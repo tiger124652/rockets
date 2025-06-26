@@ -43,9 +43,11 @@ class GameRound:
         if time.time() - self.timer_rocket >= self.time_rocket_interval and self.count_rockets > 0:
             self.create_rocket()
             self.timer_rocket = time.time()
+            self.time_rocket_interval = random.randint(5, 20) / 10
         if time.time() - self.timer_bomb >= self.time_bomb_interval and self.count_bombs > 0:
             self.create_bomb()
             self.timer_bomb = time.time()
+            self.time_bomb_interval = random.randint(3, 5)
 
         if self.count_rockets <= 0 and self.count_bombs <= 0:
             self.rounds -= 1

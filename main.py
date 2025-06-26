@@ -23,14 +23,18 @@ class Game:
         self.player = Player(self, WIDTH//2, HEIGHT//2)
         self.game_round = GameRound(self)
 
+        self.back_ground = py.image.load("textures/background/background.png")
+        self.back_ground_rect = self.back_ground.get_rect()
+
         self.logger.info("Game initialized")
 
     def update(self):
-        self.screen.fill("black")
+        self.screen.blit(self.back_ground, self.back_ground_rect)
 
         self.player.update()
         self.game_round.update()
 
+        self.clock.tick(60)
         py.display.flip()
 
     def handle_events(self):

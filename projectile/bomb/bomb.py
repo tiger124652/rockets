@@ -11,8 +11,7 @@ class Bomb(py.sprite.Sprite):
         super().__init__()
         self.app = app
 
-        self.image = py.Surface((70, 70))
-        self.image.fill("white")
+        self.image = py.image.load("textures/projectiles/bomb/bomb/model0.png")
 
         self.rect = self.image.get_rect()
         self.rect.x = random.randint(0, WIDTH-70)

@@ -7,8 +7,7 @@ class Fragment(py.sprite.Sprite):
         super().__init__()
         self.app = app
 
-        self.image = py.Surface((10, 10))
-        self.image.fill("yellow")
+        self.image = py.image.load("textures/projectiles/bomb/fragment/model0.png")
 
         self.rect = self.image.get_rect()
         self.rect.x = x

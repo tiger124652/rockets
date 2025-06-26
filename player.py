@@ -10,8 +10,7 @@ class Player:
         self.health = PLAYER_HEALTH
         self.speed = PLAYER_SPEED
 
-        self.image = py.Surface((100, 100))
-        self.image.fill("red")
+        self.image = py.image.load("textures/player/model0.png")
 
         self.rect = self.image.get_rect()
         self.rect.x = x

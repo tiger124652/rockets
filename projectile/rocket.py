@@ -8,8 +8,7 @@ class Rocket(py.sprite.Sprite):
         super().__init__()
         self.app = app
 
-        self.image = py.Surface((50, 50))
-        self.image.fill("yellow")
+        self.image = py.image.load("textures/projectiles/rocket/model0.png")
 
         self.rect = self.image.get_rect()
         self.rect.x = random.choice([10, WIDTH-10])
@@ -22,6 +21,8 @@ class Rocket(py.sprite.Sprite):
 
         self.vx = v.normalize().x * SPEED_ROCKET
         self.vy = v.normalize().y * SPEED_ROCKET
+        self.image = py.transform.rotate(self.image,
+                                          py.math.Vector2(self.vx, self.vy).angle_to(py.math.Vector2(0, -1)))
 
         self.logger = logging.getLogger(__name__)
         self.logger.info("Rocket created")
