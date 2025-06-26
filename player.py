@@ -58,12 +58,13 @@ class Player:
         if self.right and self.rect.right < WIDTH:
             self.rect = self.rect.move((self.speed, 0))
 
+    def show(self):
+        self.app.screen.blit(self.image, self.rect)
+
     def update(self):
         self.move()
+        self.show()
 
         if self.health <= 0:
             self.app.is_running = False
             self.logger.info("The Player lost")
-
-    def show(self):
-        self.app.screen.blit(self.image, self.rect)
